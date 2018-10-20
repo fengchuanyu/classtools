@@ -46,27 +46,33 @@ export default [
     ]
   },
   {
-    path: '',
-    name: 'doc',
+    path: '/bill',
+    name: 'bill',
     meta: {
-      title: '文档',
-      href: 'https://lison16.github.io/iview-admin-doc/#/',
-      icon: 'ios-book'
-    }
-  },
-  {
-    path: '/join',
-    name: 'join',
+      hide: true,
+      icon: 'md-home'
+    },
     component: Main,
     children: [
       {
-        path: 'join_page',
-        name: 'join_page',
+        path: 'bill_edit',
+        name: 'bill_edit',
         meta: {
-          icon: '_qq',
-          title: 'QQ群'
+          icon: 'ios-hammer',
+          title: '记账页面',
+          beforeCloseName: 'before_close_normal'
         },
-        component: () => import('@/view/join-page.vue')
+        component: () => import('@/view/bill/bill-edit.vue')
+      },
+      {
+        path: 'bill_list',
+        name: 'bill_list',
+        meta: {
+          icon: 'ios-hammer',
+          title: '账单列表',
+          beforeCloseName: 'before_close_normal'
+        },
+        component: () => import('@/view/bill/bill-list.vue')
       }
     ]
   },
